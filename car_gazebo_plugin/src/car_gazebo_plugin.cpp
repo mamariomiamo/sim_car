@@ -116,7 +116,7 @@ void CarGazeboPlugin::Load(gazebo::physics::ModelPtr model,
     ackermann_pub = ros_node_->create_publisher<ackermann_msgs::msg::AckermannDriveStamped>("/" + model_->GetName() + "/cmd_ackermann", 10);
 
     pose_pub = ros_node_->create_publisher<geometry_msgs::msg::PoseStamped>("/" + model_->GetName() + "/pose", rclcpp::SensorDataQoS());
-    odom_pub = ros_node_->create_publisher<nav_msgs::msg::Odometry>("/" + model_->GetName() + "/odom", rclcpp::SensorDataQoS());
+    odom_pub = ros_node_->create_publisher<nav_msgs::msg::Odometry>("/odom", rclcpp::SensorDataQoS());
 
 
     // subscribe
